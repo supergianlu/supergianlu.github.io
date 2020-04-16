@@ -1,28 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Privacy Policy</title>
     <style>
-    	body{
-        	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
-            padding:1em;
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            padding: 1em;
         }
     </style>
 </head>
 <body>
-<h2>Privacy Policy</h2>
-<p><strong>Apple Speech Recognition</strong></p>
-<p>Audio to text for WhatsApp uses the Apple Speech Recognition service to convert the audio in text.</p>
-<p>Audio files are sent and processed by the Apple servers to get the most accurate text possible.</p>
-<p>The Apple Speech Recognition, for some languages, can also works offline, without sending audio to the servers.</p>
-  
-<p><strong>Privacy of your data</strong></p>
-<p>Your audio/videos are processed only by the application and the Apple servers, we do not keep or store any data.</p>
-	
-<p><strong>Terms</strong></p>
-<p>Be sure to install the application from <a href="https://www.apple.com/ios/app-store/">App Store</a>, we are not responsible for damage to your device resulting from cracked and pirated versions of our app.</p> 
-<p>Furthermore, the application could not work properly if not installed by App Store.</p>
+    <div id="att" style="display:none">
+        <h2>Audio to text for Whatsapp - Privacy Policy</h2>
+        <p><strong>Apple Speech Recognition</strong></p>
+        <p>Audio to text for WhatsApp uses the Apple Speech Recognition service to convert the audio in text.</p>
+        <p>Audio files are sent and processed by the Apple servers to get the most accurate text possible.</p>
+        <p>The Apple Speech Recognition, for some languages, can also works offline, without sending audio to the
+            servers.
+        </p>
+
+        <p><strong>Privacy of your data</strong></p>
+        <p>Your audio/videos are processed only by the application and the Apple servers, we do not keep or store any
+            data.
+        </p>
+
+        <p><strong>Terms</strong></p>
+        <p>Be sure to install the application from <a href="https://www.apple.com/ios/app-store/">App Store</a>, we are
+            not
+            responsible for damage to your device resulting from cracked and pirated versions of our app.</p>
+        <p>Furthermore, the application could not work properly if not installed by App Store.</p>
+    </div>
+
+    <div id="mutify" style="display:none">
+        <h2>Mutify - Privacy Policy</h2>
+        <p><strong>Google AdMob</strong></p>
+        <p>Mutify uses Google AdMob to serve ads.</p>
+        <p>Google AdMob uses the devices advertising id to serve <a href="https://www.google.com/settings/u/0/ads/authenticated">personalized ads</a> based on the users interests.</p>
+
+        <p><strong>Terms</strong></p>
+        <p>Be sure to install the application from <a href="https://www.play.google.com/store/apps/details?id=com.supergianlu.mutify">Play Store</a>, we are
+            not
+            responsible for damage to your device resulting from cracked and pirated versions of our app.</p>
+        <p>Furthermore, the application could not work properly if not installed by Play Store.</p>
+    </div>
 </body>
+<script>
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+
+    function getUrlParam(parameter, defaultvalue) {
+        var urlparameter = defaultvalue;
+        if (window.location.href.indexOf(parameter) > -1) {
+            urlparameter = getUrlVars()[parameter];
+        }
+        return urlparameter;
+    }
+
+    var param = getUrlParam('app', '');
+    
+    if (param == 'mutify') {
+        document.getElementById("mutify").style.display = 'block'
+    } else {
+        document.getElementById("att").style.display = 'block'
+    }
+</script>
 </html>
